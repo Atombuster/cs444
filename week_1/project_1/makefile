@@ -1,7 +1,7 @@
 # Variables
 CC = gcc
 CFLAGS = -Wall -Wextra -O2
-TARGET = in_class
+TARGET = hellothread
 
 # Build the executable
 $(TARGET): $(TARGET).o
