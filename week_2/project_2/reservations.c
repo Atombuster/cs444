@@ -16,15 +16,7 @@ int seat_taken_count = 0;
 
 int reserve_seat(int n)
 {
-    // Attempt to reserve seat number n
-    //
-    // If the seat is already taken, return -1
-    // Otherwise mark the seat as taken and return 0
-    //
-    // This function should also increment seat_taken_count if the seat
-    // wasn't already taken.
-    
-    // TODO
+
     pthread_mutex_lock(&lock);
 
     if(seat_taken[n]) {
@@ -41,15 +33,6 @@ int reserve_seat(int n)
 
 int free_seat(int n)
 {
-    // Attempt to free (unreserve) seat number n
-    //
-    // If the seat is already free, return -1
-    // Otherwise mark the seat as free and return 0
-    //
-    // This function should also decrement seat_taken_count if the seat
-    // wasn't already free.
-
-    // TODO
 
     pthread_mutex_lock(&lock);
 
@@ -67,9 +50,6 @@ int free_seat(int n)
 }
 
 int is_free(int n) {
-    // Returns true if the given seat is available.
-
-    // TODO
 
     pthread_mutex_lock(&lock);
     int is_it_free = !seat_taken[n];
@@ -79,15 +59,7 @@ int is_free(int n) {
 }
 
 int verify_seat_count(void) {
-    // This function counts all the taken seats in the seat_taken[]
-    // array.
-    //
-    // It then compares the count with the seat_count global variable.
-    //
-    // It returns true if they are the same, false otherwise
-    //
-    // You MAY modify this function, but the intended functionality must
-    // still work properly.
+
     pthread_mutex_lock(&lock);
     int count = 0;
     
