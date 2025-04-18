@@ -129,5 +129,6 @@ int main(int argc, char *argv[])
     sem_close(mutex);
     sem_close(items);
     sem_close(spaces);
+    eventbuf_free(eb);
 
 }
